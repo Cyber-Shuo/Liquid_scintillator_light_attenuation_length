@@ -1,9 +1,6 @@
-from cProfile import label
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-import re
-import string
 from scipy.optimize import curve_fit
 import pandas as pd
 
