@@ -2,8 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 from matplotlib import cm
-import re
-import string
 from scipy.optimize import curve_fit
 import pandas as pd
 
