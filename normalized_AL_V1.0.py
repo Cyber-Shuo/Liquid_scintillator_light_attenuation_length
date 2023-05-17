@@ -55,7 +55,7 @@ def data_arrange(path_initial_data, pedestal, x_L_L, y_ADC, mean_sigma, norm_y_A
     # fit initial values ADC_0
     ADC_0 = (x_L_L[-1]*y_ADC_remove_pedestal[0] - x_L_L[0]*y_ADC_remove_pedestal[-1])/(x_L_L[-1] - x_L_L[0])
     # fit initial values AL
-    estimate_AL = initial_L_ADC*(x_L_L[-1] - x_L_L[0])/(y_ADC_exact_pedestal[0] - y_ADC_exact_pedestal[-1])
+    estimate_AL = ADC_0*(x_L_L[-1] - x_L_L[0])/(y_ADC_remove_pedestal[0] - y_ADC_remove_pedestal[-1])
 
     # fit
     popt, pcov = curve_fit(ExpFunc, x_L_L, y_ADC_remove_pedestal, sigma = mean_sigma, p0 = [estimate_AL, ADC_0], bounds=([0, 0], [500, 4096]))
